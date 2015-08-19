@@ -59,8 +59,8 @@ using namespace std;
 */
 
 void DisplayMenu();
-void InputMenuChoice(int&);
-void ErrorCheckingChoice(int&);
+void InputMenuChoice(int &);
+void ErrorCheckingChoice(int &);
 int SearchInventory(BaseballInventory[], int, string);
 void PrintItemData(const BaseballItems &);
 void ExitScreen();
@@ -94,7 +94,7 @@ void main()
 	*/
 
 	char Enter = ' ',
-		ReturnMainMenu = ' ';
+		 ReturnMainMenu = ' ';
 
 	int MenuChoice = 0,
 		Pos = 0;
@@ -155,7 +155,7 @@ void main()
 				cout << setw(5) << " " << "How many " << Baseball[Pos].getDescriptionBaseballInventory() << " would you like to purchase\n";
 				cout << setw(5) << " " << "Number of " << Baseball[Pos].getDescriptionBaseballInventory() << " ==> ";
 				cin >> Items.NumberOfGloves;
-				cout << "\\n\n";
+				cout << "\n\n";
 			
 				Items.TotalCostGloves =+ Baseball[Pos].getPriceBaseballInventory() * Items.NumberOfGloves;
 				Items.TotalGloves =+ Items.NumberOfGloves;
@@ -175,7 +175,7 @@ void main()
 				cout << setw(5) << " " << "How many " << Baseball[Pos].getDescriptionBaseballInventory() << " would you like to purchase\n";
 				cout << setw(5) << " " << "Number of " << Baseball[Pos].getDescriptionBaseballInventory() << " ==> ";
 				cin >> Items.NumberOfBaseballs;
-				cout << "\\n\n";
+				cout << "\n\n";
 
 				Items.TotalCostBaseballs =+ Baseball[Pos].getPriceBaseballInventory() * Items.NumberOfBaseballs;
 				Items.TotalBaseballs =+ Items.NumberOfBaseballs;
@@ -194,7 +194,7 @@ void main()
 				cout << setw(5) << " " << "How many " << Baseball[Pos].getDescriptionBaseballInventory() << " would you like to purchase\n";
 				cout << setw(5) << " " << "Number of " << Baseball[Pos].getDescriptionBaseballInventory() << " ==> ";
 				cin >> Items.NumberOfCatcher;
-				cout << "\\n\n";
+				cout << "\n\n";
 
 				Items.TotalCostCatcher =+ Baseball[Pos].getPriceBaseballInventory() * Items.NumberOfCatcher;
 				Items.TotalCatcher =+ Items.NumberOfCatcher;
@@ -213,7 +213,7 @@ void main()
 				cout << setw(5) << " " << "How many " << Baseball[Pos].getDescriptionBaseballInventory() << " would you like to purchase\n";
 				cout << setw(5) << " " << "Number of " << Baseball[Pos].getDescriptionBaseballInventory() << " ==> ";
 				cin >> Items.NumberOfBattingHelmet;
-				cout << "\\n\n";
+				cout << "\n\n";
 
 				Items.TotalCostBattingHelmet =+ Baseball[Pos].getPriceBaseballInventory() * Items.NumberOfBattingHelmet;
 				Items.TotalBattingHelmet =+ Items.NumberOfBattingHelmet;
@@ -232,7 +232,7 @@ void main()
 				cout << setw(5) << " " << "How many " << Baseball[Pos].getDescriptionBaseballInventory() << " would you like to purchase\n";
 				cout << setw(5) << " " << "Number of " << Baseball[Pos].getDescriptionBaseballInventory() << " ==> ";
 				cin >> Items.NumberOfBaseballBags;
-				cout << "\\n\n";
+				cout << "\n\n";
 
 				Items.TotalCostBaseballBags =+ Baseball[Pos].getPriceBaseballInventory() * Items.NumberOfBaseballBags;
 				Items.TotalBaseballBags =+ Items.NumberOfBaseballBags;
@@ -251,7 +251,7 @@ void main()
 				cout << setw(5) << " " << "How many " << Baseball[Pos].getDescriptionBaseballInventory() << " would you like to purchase\n";
 				cout << setw(5) << " " << "Number of " << Baseball[Pos].getDescriptionBaseballInventory() << " ==> ";
 				cin >> Items.NumberOfBattingGlove;
-				cout << "\\n\n";
+				cout << "\n\n";
 
 				Items.TotalCostBattingGlove =+ Baseball[Pos].getPriceBaseballInventory() * Items.NumberOfBattingGlove;
 				Items.TotalBattingGlove =+ Items.NumberOfBattingGlove;
@@ -308,7 +308,7 @@ void main()
 *********************************************************************************************
 */
 
-void DipslayMenu()
+void DisplayMenu()
 {
 	cout << "\n";
 	cout << setw(55) << " " << "Jonny Mack's Sports Goods\n\n\n";
@@ -318,7 +318,6 @@ void DipslayMenu()
 	cout << setw(32) << " " << "4.  CoolFlo High Impact ABS Batting Helmet     $78.99\n\n";
 	cout << setw(32) << " " << "5.  ALl American WHeeled Baseball Bag   $137.48\n\n";
 	cout << setw(32) << " " << "6.  Pro Mesh Series Batting Glove $21.95\n\n\n";
-	return;
 }
 
 /*
@@ -329,12 +328,11 @@ void DipslayMenu()
 *********************************************************************************************
 */
 
-void InputMenuChoiice(int &MenuChoice)
+void InputMenuChoice(int &MenuChoice)
 {
 	cout << setw(32) << " " << "Select an item by Number ==>  ";
 	cin >> MenuChoice;
 	system("CLS");
-	return;
 }
 
 /*
@@ -370,7 +368,6 @@ void ErrorCheckingChoice(int &MenuChoice)
 		cout << setw(32) << " " << "Please enter a value between 1 and 6 ==> ";
 		cin >> MenuChoice;
 	}
-	return;
 }
 
 /*
@@ -426,7 +423,7 @@ void PrintItemData(const BaseballItems &Items)
 	OutputFile << "\n";
 	OutputFile << setw(30) << " " << "Honny Mack's Sports Goods\n";
 	OutputFile << setw(37) << " " << "Receipt Copy\n\n\n";
-	OutputFile << setw(4) << " " << "Description                           Quantity        TOtal Cost\n\n";
+	OutputFile << setw(4) << " " << "Description                           Quantity        Total Cost\n\n";
 	OutputFile << setw(4) << " " << "Rawlings Baseball Glove                   " << Items.NumberOfGloves << "            " << Items.TotalCostGloves << "\n";
 	OutputFile << setw(4) << " " << "Rawlings Rawlings Baseball (1 Doz)        " << Items.NumberOfBaseballs << "            " << Items.TotalCostBaseballs << "\n";
 	OutputFile << setw(4) << " " << "Wilson Limited Edition Catcher Set        " << Items.NumberOfCatcher << "            " << Items.TotalCostCatcher << "\n";
@@ -435,7 +432,6 @@ void PrintItemData(const BaseballItems &Items)
 	OutputFile << setw(4) << " " << "Pro Mesh Series Batting Glove             " << Items.NumberOfBattingGlove << "            " << Items.TotalCostBattingGlove << "\n";
 	
 	OutputFile.close();
-	return;
 }
 
 /*
@@ -452,5 +448,4 @@ void ExitScreen()
 	cout << setw(55) << " " << "Thank You For Your Purchase\n\n\n";
 	cout << setw(45) << " " << "Please print off your receipt for your recoreds.\n\n\n\n\n";
 	cout << setw(48) << " " << "Press the <ENTER> key to end the program.";
-	return;
 }

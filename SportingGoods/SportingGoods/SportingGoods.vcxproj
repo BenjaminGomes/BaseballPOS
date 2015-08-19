@@ -124,6 +124,9 @@
     <ClInclude Include="BaseballInventory.h" />
     <ClInclude Include="BaseballItems.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Receipt.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
